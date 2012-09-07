@@ -10,10 +10,10 @@
 # name of the wiki
 wikiname: FusionInventory
 # contact email for wiki
-adminemail: admin@branchable.com
+adminemail: goneri@rulezlan.org
 # users who are wiki admins
 adminuser:
-- http://none/
+- https://www.google.com/accounts/o8/id?id=AItOawkcRP2s3jxMUt_Vb0pZyx17rug3j1Xmx3s
 # users who are banned from the wiki
 banned_users: []
 # where the source of the wiki is located
@@ -76,7 +76,7 @@ prefix_directives: 1
 # use page/index.mdwn source files
 indexpages: 0
 # enable Discussion pages?
-discussion: '0'
+discussion: '1'
 # name of Discussion pages
 discussionpage: Discussion
 # generate HTML5?
@@ -210,11 +210,12 @@ blogspam_pagespec: postcomment(*)
 # url to redirect to when authentication is needed
 #cgiauthurl: http://example.com/wiki/auth/ikiwiki.cgi
 # PageSpec of pages where only httpauth will be used for authentication
-#httpauth_pagespec: '!*/Discussion'
+httpauth_pagespec: '!*/Discussion'
 
 # lockedit plugin
 # PageSpec controlling which pages are locked
-locked_pages: '* and !postcomment(*)'
+#locked_pages: '* and !postcomment(*)'
+locked_pages: '!*/Discussion and !documentation*'
 
 # moderatedcomments plugin
 # PageSpec matching users or comment locations to moderate
@@ -447,7 +448,7 @@ archive_pagespec: page(posts/*) and !*/Discussion
 
 # sidebar plugin
 # show sidebar page on all pages?
-global_sidebars: '0'
+global_sidebars: '1'
 
 # tag plugin
 # parent page tags are located under
