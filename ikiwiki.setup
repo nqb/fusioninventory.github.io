@@ -210,7 +210,7 @@ blogspam_pagespec: postcomment(*)
 # url to redirect to when authentication is needed
 #cgiauthurl: http://example.com/wiki/auth/ikiwiki.cgi
 # PageSpec of pages where only httpauth will be used for authentication
-httpauth_pagespec: '!*/Discussion'
+#httpauth_pagespec: '!*/Discussion'
 
 # lockedit plugin
 # PageSpec controlling which pages are locked
