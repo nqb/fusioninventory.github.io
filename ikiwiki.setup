@@ -21,9 +21,9 @@ srcdir: /home/b-fusioninventory/source
 # where to build the wiki
 destdir: /home/b-fusioninventory/public_html
 # base url to the wiki
-url: http://fusioninventory.branchable.com
+url: http://wiki.fusioninventory.org
 # url to the ikiwiki.cgi
-cgiurl: http://fusioninventory.branchable.com/ikiwiki.cgi
+cgiurl: http://wiki.fusioninventory.org/ikiwiki.cgi
 # filename of cgi wrapper to generate
 cgi_wrapper: /var/www/b-fusioninventory/ikiwiki.cgi
 # mode for cgi_wrapper (can safely be made suid)
@@ -68,7 +68,7 @@ underlaydir: /usr/share/ikiwiki/basewiki
 # display verbose messages?
 #verbose: 1
 # log to syslog?
-syslog: '1'
+syslog: 1
 # create output files named page/index.html?
 usedirs: '1'
 # use '!'-prefixed preprocessor directives?
@@ -129,7 +129,7 @@ branchable: '1'
 # Allow anyone to git push verified changes to this site?
 #anonpush: 0
 # Display "Branchable" link on action bar?
-branchable_action: 1
+branchable_action: '1'
 
 # git plugin
 # git hook to generate
@@ -162,7 +162,10 @@ htmlscrubber_skip: '* and !comment(*) and !*/Discussion'
 
 # ikiwikihosting plugin
 # list of urls that alias to the main url
-#urlalias: []
+urlalias:
+- http://fusioninventory.branchable.com/
+- http://www.wiki.fusioninventory.org/
+- http://www.fusioninventory.org/
 # openid of primary site owner
 owner: https://www.google.com/accounts/o8/id?id=AItOawkcRP2s3jxMUt_Vb0pZyx17rug3j1Xmx3s
 # optional hostname of site this one was branched from
@@ -174,7 +177,7 @@ created: '1347041713'
 # how many days to retain logs
 #log_period: 7
 # disable IPv6?
-ipv6_disabled: 0
+ipv6_disabled: '0'
 
 # inline plugin
 # enable rss feeds by default?
@@ -284,8 +287,8 @@ po_link_to: default
 
 ######################################################################
 # web plugins
-#   (404, attachment, comments, editdiff, edittemplate, google, goto,
-#    mirrorlist, remove, rename, repolist, search, theme, userlist,
+#   (404, attachment, comments, editdiff, edittemplate, getsource, google,
+#    goto, mirrorlist, remove, rename, repolist, search, theme, userlist,
 #    websetup, wmd)
 ######################################################################
 
@@ -307,7 +310,11 @@ comments_pagename: comment_
 # Allow anonymous commenters to set an author name?
 #comments_allowauthor: 0
 # commit comments to the VCS
-comments_commit: 1
+comments_commit: '1'
+
+# getsource plugin
+# Mime type for returned source.
+#getsource_mimetype: text/plain; charset=utf-8
 
 # mirrorlist plugin
 # list of mirrors
@@ -401,7 +408,7 @@ directive_description_dir: ikiwiki/directive
 
 # aggregate plugin
 # enable aggregation to internal pages?
-aggregateinternal: 1
+aggregateinternal: '1'
 # allow aggregation to be triggered via the web?
 #aggregate_webtrigger: 0
 # cookie control
@@ -410,7 +417,7 @@ cookiejar:
 
 # autoindex plugin
 # commit autocreated index pages
-autoindex_commit: 1
+autoindex_commit: '1'
 
 # camelcase plugin
 # list of words to not turn into links
@@ -436,7 +443,7 @@ prettydateformat: '%X, %B %o, %Y'
 # name of the recentchanges page
 recentchangespage: recentchanges
 # number of changes to track
-recentchangesnum: 100
+recentchangesnum: '100'
 
 # rsync plugin
 # command to run to sync updated pages
@@ -452,7 +459,7 @@ tagbase: tags
 # autocreate new tag pages?
 #tag_autocreate: 1
 # commit autocreated tag pages
-tag_autocreate_commit: 1
+tag_autocreate_commit: '1'
 
 # typography plugin
 # Text::Typography attributes value
