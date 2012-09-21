@@ -59,7 +59,6 @@ add_plugins:
 - testpagespec
 - version
 - theme
-- po
 # plugins to disable
 disable_plugins: []
 # additional directory to search for template files
@@ -128,7 +127,7 @@ allow_symlinks_before_srcdir: '0'
 # Allow anyone to branch, check out, and copy this site?
 branchable: '1'
 # Allow anyone to git push verified changes to this site?
-anonpush: '0'
+anonpush: 0
 # Display "Branchable" link on action bar?
 branchable_action: '0'
 
@@ -260,13 +259,14 @@ langdefdir: /usr/share/highlight/langDefs
 
 # po plugin
 # master language (non-PO files)
-po_master_language: en|English
+#po_master_language: en|English
 # slave languages (translated via PO files) format: ll|Langname
-po_slave_languages:
-- es|Español
-- fr|Français
+#po_slave_languages:
+#- fr|Français
+#- es|Español
+#- de|Deutsch
 # PageSpec controlling which pages are translatable
-po_translatable_pages: '* and !*/Discussion'
+po_translatable_pages: ''
 # internal linking behavior (default/current/negotiated)
 po_link_to: default
 
@@ -322,7 +322,6 @@ comments_commit: '1'
 # URIs of repositories containing the wiki's source
 repositories:
 - ssh://b-fusioninventory@fusioninventory.branchable.com/
-- git://fusioninventory.branchable.com/
 
 # search plugin
 # path to the omega cgi program
