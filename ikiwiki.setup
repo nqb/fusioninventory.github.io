@@ -296,7 +296,7 @@ langdefdir: /usr/share/highlight/langDefs
 
 # attachment plugin
 # enhanced PageSpec specifying what attachments are allowed
-allowed_attachments: maxsize(1mb) and virusfree()
+allowed_attachments: maxsize(1mb) and type(webimage) and virusfree()
 # virus checker program (reads STDIN, returns nonzero if virus found)
 virus_checker: clamdscan -
 
