@@ -269,9 +269,10 @@ po_master_language: en|English
 po_slave_languages:
 - pl|Polski
 # PageSpec controlling which pages are translatable
-po_translatable_pages: ''
+po_translatable_pages: '*.mdwn and !*/Discussion and !*/news and !*/templates and
+  !*/archives'
 # internal linking behavior (default/current/negotiated)
-po_link_to: '*.mdwn and !*/Discussion and !*/news and !*/templates and !*/archives'
+po_link_to: ''
 
 ######################################################################
 # special-purpose plugins
