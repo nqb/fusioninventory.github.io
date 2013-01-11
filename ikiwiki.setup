@@ -268,6 +268,7 @@ po_master_language: en|English
 # slave languages (translated via PO files) format: ll|Langname
 po_slave_languages:
 - pl|Polski
+- fr|Français
 # PageSpec controlling which pages are translatable
 po_translatable_pages: 'page(*) and !*/Discussion and !*/news and !*/templates and !*/archives and !*.pl'
 # internal linking behavior (default/current/negotiated)
