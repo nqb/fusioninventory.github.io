@@ -270,9 +270,10 @@ po_slave_languages:
 - pl|Polski
 - fr|Français
 # PageSpec controlling which pages are translatable
-po_translatable_pages: 'page(*) and !*/Discussion and !*/news and !*/templates and !*/archives and !*.pl'
+po_translatable_pages: page(*) and !*/Discussion and !*/news and !*/templates and
+  !*/archives and !*.pl
 # internal linking behavior (default/current/negotiated)
-po_link_to: default
+po_link_to: negotiated
 
 ######################################################################
 # special-purpose plugins
