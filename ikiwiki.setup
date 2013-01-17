@@ -271,7 +271,7 @@ po_slave_languages:
 - fr|Français
 # PageSpec controlling which pages are translatable
 po_translatable_pages: page(*) and !*/Discussion and !*/news and !*/templates and
-  !*/archives and !*.pl
+  !*/archives and !*.pl and !*.vbs
 # internal linking behavior (default/current/negotiated)
 po_link_to: negotiated
 
