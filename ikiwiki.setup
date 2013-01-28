@@ -268,10 +268,8 @@ langdefdir: /usr/share/highlight/langDefs
 po_master_language: en|English
 # slave languages (translated via PO files) format: ll|Langname
 po_slave_languages:
-- de|Deutsche
-- fr|Français
 - pl|Polski
-- pt|Português
+- fr|Français
 # PageSpec controlling which pages are translatable
 po_translatable_pages: page(*) and !*/Discussion and !*/news and !*/templates and
   !*/archives and !*.pl and !*.vbs
