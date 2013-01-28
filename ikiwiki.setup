@@ -272,6 +272,7 @@ po_slave_languages:
 - fr|Français
 - pl|Polski
 - pt|Português
+- es|Español
 # PageSpec controlling which pages are translatable
 po_translatable_pages: page(*) and !*/Discussion and !*/news and !*/templates and
   !*/archives and !*.pl and !*.vbs
