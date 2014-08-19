@@ -14,6 +14,7 @@ adminemail: goneri@lebouder.net
 # users who are wiki admins
 adminuser:
 - https://www.google.com/accounts/o8/id?id=AItOawkcRP2s3jxMUt_Vb0pZyx17rug3j1Xmx3s
+- https://www.google.com/accounts/o8/id?id=AItOawkhOzEAtxh8kSWm9XUumRMP4tSKpq8kr9k
 - https://www.google.com/accounts/o8/id?id=AItOawmxlD-0m59abo8VkvW7Ki_BHVNRdY_BVB0
 # users who are banned from the wiki
 banned_users: []
@@ -128,6 +129,8 @@ allow_symlinks_before_srcdir: 0
 # cookie control
 cookiejar:
   file: /home/b-fusioninventory/.ikiwiki/cookies
+# set custom user agent string for outbound HTTP requests e.g. when fetching aggregated RSS feeds
+#useragent: Wget/1.13.4 (linux-gnu)
 
 ######################################################################
 # core plugins
@@ -316,8 +319,8 @@ po_link_to: negotiated
 
 ######################################################################
 # web plugins
-#   (404, attachment, comments, editdiff, edittemplate, getsource, google,
-#    goto, mirrorlist, remove, rename, repolist, search, theme, userlist,
+#   (404, attachment, comments, editdiff, edittemplate, google, goto,
+#    mirrorlist, remove, rename, repolist, search, theme, userlist,
 #    websetup, wmd)
 ######################################################################
 
@@ -343,10 +346,6 @@ comments_commit: 1
 # Restrict formats for comments to (no restriction if empty)
 comments_allowformats: ''
 
-# getsource plugin
-# Mime type for returned source.
-#getsource_mimetype: text/plain; charset=utf-8
-
 # mirrorlist plugin
 # list of mirrors
 #mirrorlist: {}
@@ -363,7 +362,7 @@ repositories:
 # path to the omega cgi program
 omega_cgi: /usr/lib/cgi-bin/omega/omega
 # use google site search rather than internal xapian index?
-google_search: 1
+google_search: 0
 
 # theme plugin
 # name of theme to enable
