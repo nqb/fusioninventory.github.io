@@ -10,7 +10,7 @@
 # name of the wiki
 wikiname: FusionInventory
 # contact email for wiki
-adminemail: goneri@lebouder.net
+adminemail: admin@branchable.com
 # users who are wiki admins
 adminuser:
 - https://www.google.com/accounts/o8/id?id=AItOawkcRP2s3jxMUt_Vb0pZyx17rug3j1Xmx3s
@@ -26,6 +26,8 @@ destdir: /home/b-fusioninventory/public_html
 url: http://www.fusioninventory.org
 # url to the ikiwiki.cgi
 cgiurl: http://www.fusioninventory.org/ikiwiki.cgi
+# do not adjust cgiurl if CGI is accessed via different URL
+reverse_proxy: 0
 # filename of cgi wrapper to generate
 cgi_wrapper: /var/www/b-fusioninventory/ikiwiki.cgi
 # mode for cgi_wrapper (can safely be made suid)
@@ -89,7 +91,7 @@ indexpages: 0
 discussion: 1
 # name of Discussion pages
 discussionpage: Discussion
-# generate HTML5?
+# use elements new in HTML5 like <section>?
 html5: 0
 # only send cookies over SSL connections?
 sslcookie: 0
@@ -111,7 +113,9 @@ hardlink: 1
 #umask: public
 # group for wrappers to run in
 #wrappergroup: ikiwiki
-# extra library and plugin directory
+# extra library and plugin directories
+libdirs: []
+# extra library and plugin directory (searched after libdirs)
 libdir: /home/b-fusioninventory/.ikiwiki
 # environment variables
 ENV:
@@ -130,12 +134,14 @@ allow_symlinks_before_srcdir: 0
 cookiejar:
   file: /home/b-fusioninventory/.ikiwiki/cookies
 # set custom user agent string for outbound HTTP requests e.g. when fetching aggregated RSS feeds
-#useragent: Wget/1.13.4 (linux-gnu)
+useragent: ikiwiki/3.20150330
+# theme has a responsive layout? (mobile-optimized)
+responsive_layout: 1
 
 ######################################################################
 # core plugins
 #   (branchable, editpage, git, gitpush, htmlscrubber, ikiwikihosting,
-#    inline, link, meta, parentlinks)
+#    inline, link, meta, parentlinks, templatebody)
 ######################################################################
 
 # branchable plugin
@@ -183,7 +189,7 @@ urlalias:
 - http://fusioninventory.branchable.com/
 - http://www.fusioninventory.org/
 - http://wiki.fusioninventory.org/
-# openid of primary site owner
+# openid or email of primary site owner
 owner: https://www.google.com/accounts/o8/id?id=AItOawkcRP2s3jxMUt_Vb0pZyx17rug3j1Xmx3s
 # optional hostname of site this one was branched from
 #parent: ''
@@ -195,6 +201,8 @@ created: 1347041713
 #log_period: 7
 # disable IPv6?
 ipv6_disabled: 0
+# redirect from http to https?
+redirect_to_https: 0
 
 # inline plugin
 # enable rss feeds by default?
@@ -210,7 +218,7 @@ pingurl: []
 
 ######################################################################
 # auth plugins
-#   (anonok, blogspam, httpauth, lockedit, moderatedcomments,
+#   (anonok, blogspam, emailauth, httpauth, lockedit, moderatedcomments,
 #    opendiscussion, openid, passwordauth, signinedit)
 ######################################################################
 
@@ -223,7 +231,7 @@ pingurl: []
 blogspam_pagespec: postcomment(*)
 # options to send to blogspam server
 #blogspam_options: blacklist=1.2.3.4,blacklist=8.7.6.5,max-links=10
-# blogspam server XML-RPC url
+# blogspam server JSON url
 #blogspam_server: ''
 
 # httpauth plugin
@@ -319,8 +327,8 @@ po_link_to: negotiated
 
 ######################################################################
 # web plugins
-#   (404, attachment, comments, editdiff, edittemplate, google, goto,
-#    mirrorlist, remove, rename, repolist, search, theme, userlist,
+#   (404, attachment, comments, editdiff, edittemplate, getsource, google,
+#    goto, mirrorlist, remove, rename, repolist, search, theme, userlist,
 #    websetup, wmd)
 ######################################################################
 
@@ -345,6 +353,10 @@ comments_pagename: comment_
 comments_commit: 1
 # Restrict formats for comments to (no restriction if empty)
 comments_allowformats: ''
+
+# getsource plugin
+# Mime type for returned source.
+#getsource_mimetype: text/plain; charset=utf-8
 
 # mirrorlist plugin
 # list of mirrors
@@ -400,9 +412,13 @@ websetup_show_unsafe: 0
 
 # calendar plugin
 # base of the archives hierarchy
-#archivebase: archives
-# PageSpec of pages to include in the archives; used by ikiwiki-calendar command
+archivebase: archives
+# PageSpec of pages to include in the archives, if option `calendar_autocreate` is true.
 archive_pagespec: page(news/*) and !*/Discussion
+# autocreate new calendar pages?
+calendar_autocreate: ''
+# if set, when building calendar pages, also build pages of year and month when no pages were published (building empty calendars).
+calendar_fill_gaps: 1
 
 # listdirectives plugin
 # directory in srcdir that contains directive descriptions
@@ -433,10 +449,11 @@ directive_description_dir: ikiwiki/directive
 ######################################################################
 # other plugins
 #   (aggregate, autoindex, brokenlinks, camelcase, ddate, embed, favicon,
-#    filecheck, flattr, goodstuff, htmlbalance, localstyle, missingsite,
-#    notifyemail, pagetemplate, parked, pingee, pinger, prettydate,
-#    recentchanges, recentchangesdiff, relativedate, rsync, sidebar,
-#    smiley, sortnaturally, tag, testpagespec, trail, transient, typography)
+#    filecheck, flattr, goodstuff, htmlbalance, localstyle, loginselector,
+#    missingsite, notifyemail, pagetemplate, parked, pingee, pinger,
+#    prettydate, recentchanges, recentchangesdiff, relativedate, rsync,
+#    sidebar, smiley, sortnaturally, tag, testpagespec, trail, transient,
+#    typography)
 ######################################################################
 
 # aggregate plugin
